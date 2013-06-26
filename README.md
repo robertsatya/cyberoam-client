@@ -1,5 +1,5 @@
 Cyberoam Client GUI
-========================
+===================
 
 About
 ------
@@ -21,7 +21,7 @@ To use, just run `python2 cyberoam.py`
 Limitations
 -----------
 * Needs a terminal tab open for it to be running (see workaround below).
-* The UI refining is in progress. Will update it soon.
+* The UI refining is in progress. Will update it as soon it is done.
 
 Workaround:
 You can use the provided scripts to open cyberoam client outside the terminal/cmd my using them as executables.
