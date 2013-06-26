@@ -1,4 +1,4 @@
-Graphical Cyberoam Client
+Cyberoam Client GUI
 ========================
 
 About
