@@ -16,7 +16,7 @@ Installation and Usage
 The client requires the following software to be installed:  
 * python 2.7 (http://www.python.org/getit)
 
-Ubuntu users can install it by running `apt-get install python`
+Ubuntu users can install it by running `# apt-get install python`
 
 For installation a Makefile is included with the sourcecode.
 Extract the source code onto the computer and enter these commands  
