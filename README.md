@@ -8,18 +8,18 @@ And yes this will run on both Windows and Linux.
 
 I have not included any Launcher for Windows Platform here but you can run it using commandline.
 
-I have tested it on Arch Linux (GNOME), Ubuntu 13.04 x64 (KDE and Unity), and Windows 7 x64 and it works seamlessly.
+I have tested it on Arch Linux (GNOME), Ubuntu 13.04 x64 (KDE and Unity), and Windows 7 x64 and it works seamlessly.  
 Please let me know if you encounter any bugs.
 
 Installation and Usage
 ----------------------
-The client requires the following software to be installed:
+The client requires the following software to be installed:  
 * python 2.7 (http://www.python.org/getit)
 
 Ubuntu users can install it by running `apt-get install python`
 
 For installation a Makefile is included with the sourcecode.
-Extract the source code onto the computer and enter these commands
+Extract the source code onto the computer and enter these commands  
 `cd cyberoam-client`  
 `make all`  
 `sudo make install`   
@@ -29,7 +29,7 @@ Once the above commands are executed successfully you'll find the Cyberoam Clien
 
 Uninstallation
 ---------------
-Installation is similar as well  
+Uninstallation is similar as well  
 `cd cyberoam-client`  
 `make clean`  
 `sudo make uninstall` 
