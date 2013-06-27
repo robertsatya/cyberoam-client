@@ -14,7 +14,8 @@ Please let me know if you encounter any bugs.
 Installation and Usage
 ----------------------
 The client requires the following software to be installed:  
-* python 2.7 (http://www.python.org/getit)
+* Python 2.7 (http://www.python.org/getit)
+* PyQt4 (http://www.riverbankcomputing.co.uk/software/pyqt/download/)
 
 Ubuntu users can install it by running `# apt-get install python`
 
