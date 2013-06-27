@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+# Author: Harsha Satya (https://bitbucket.org/robertsatya)
+# Cyberoam Client GUI for Linux Distros Desktop Entry for launching as an application
+
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=python2 ~/.local/share/cyberoam/cyberoam.py
+Name=Cyberoam Client
+Comment=Cyberoam Client GUI for Linux
+Icon=~/.local/share/icons/cyberoam.png
