@@ -20,6 +20,8 @@ The client requires the following software to be installed
 
 Ubuntu users can install it by running `# apt-get install python python-qt4`
 
+You can also find the source tarballs in the downloads section.
+
 For installation a Makefile is included with the sourcecode.
 Extract the source code onto the computer and enter these commands  
 `cd cyberoam-client`  
