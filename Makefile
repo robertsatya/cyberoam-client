@@ -19,7 +19,7 @@ all:
 	chmod +x ./src/cyberoam-client.desktop
 	mkdir ~/.local/share/cyberoam
 	cp ./src/cyberoam.py ~/.local/share/cyberoam/
-	cp ./res/* ~/.local/share/icons/
+	cp ./res/* ~/.local/share/cyberoam/
 	cp ./bin/cyberoam ~/.local/share/cyberoam/
 	cp ./src/cyberoam-client.desktop /tmp/
 	sed -e 's#~#'$$HOME'#' -i /tmp/cyberoam-client.desktop
@@ -29,7 +29,6 @@ install:
 	
 clean:
 	rm -rf ~/.local/share/cyberoam
-	rm ~/.local/share/icons/cyberoam*
 
 uninstall:
 	rm /usr/share/applications/cyberoam-client.desktop

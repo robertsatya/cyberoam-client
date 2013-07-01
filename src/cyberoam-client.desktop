@@ -10,4 +10,4 @@ Terminal=false
 Exec=python2 ~/.local/share/cyberoam/cyberoam.py
 Name=Cyberoam Client
 Comment=Cyberoam Client GUI for Linux
-Icon=~/.local/share/icons/cyberoam.png
+Icon=~/.local/share/cyberoam/cyberoam.png
