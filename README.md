@@ -15,8 +15,8 @@ Installation and Usage
 ----------------------
 The client requires the following software to be installed
 
-* Python 2.7 (http://www.python.org/getit)
-* PyQt4 (http://www.riverbankcomputing.co.uk/software/pyqt/download/)
+* [Python 2.7](http://www.python.org/getit)
+* [PyQt4](http://www.riverbankcomputing.co.uk/software/pyqt/download/)
 
 Installation from standard repositories  
 Arch Linux : `# pacman -S python2 python2-pyqt4`  

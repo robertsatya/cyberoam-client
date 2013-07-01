@@ -29,7 +29,7 @@ class Cyberoam(QtGui.QWidget):
 
     def initializeSettings(self):
         self.loggedIn = 0
-        self.actionMessages = ['Login', 'Logout']
+        self.actionMessages = ['&Login', '&Logout']
 
         self.userSettings = {'url': 'http://172.50.1.1:8090', 'askonexit': '1',
                             'autologin': '0', 'lastuser': 'null', 'lastpassword': 'null',
@@ -52,7 +52,7 @@ class Cyberoam(QtGui.QWidget):
     def createwindow(self):
         self.setFixedSize(320, 250)
         self.setWindowTitle("Cyberoam Client")
-        self.setWindowIcon(QtGui.QIcon("cyberoam.png"))
+        self.setWindowIcon(QtGui.QIcon("./cyberoam.png"))
 
         #center window
         qr = self.frameGeometry()
@@ -71,8 +71,8 @@ class Cyberoam(QtGui.QWidget):
         self.rememberField = QtGui.QCheckBox("Remember Me")
 
         self.actionButton = QtGui.QPushButton(self.actionMessages[self.loggedIn])
-        self.exitButton = QtGui.QPushButton("Exit")
-        self.settingsButton = QtGui.QPushButton("Settings")
+        self.exitButton = QtGui.QPushButton("&Exit")
+        self.settingsButton = QtGui.QPushButton("&Settings")
 
         self.statusLabel = QtGui.QTextEdit()
         self.statusLabel.setReadOnly(True)
@@ -103,9 +103,10 @@ class Cyberoam(QtGui.QWidget):
         self.actionButton.clicked.connect(self.handleActionButton)
         self.settingsButton.clicked.connect(self.showSettingsWindow)
         self.exitButton.clicked.connect(self.exitApp)
+        self.passwordField.returnPressed.connect(self.handleActionButton)
 
     def initializeSystemTray(self):
-        self.tray = QtGui.QSystemTrayIcon(QtGui.QIcon("cyberoam.png"), self)
+        self.tray = QtGui.QSystemTrayIcon(QtGui.QIcon("./cyberoam.png"), self)
         menu = QtGui.QMenu(self)
         windowAction = menu.addAction("Hide/Restore")
         windowAction.triggered.connect(self.changeWindowStatus)
@@ -162,7 +163,7 @@ class Cyberoam(QtGui.QWidget):
 
     def showSettingsWindow(self):
         self.settingsWindow = QtGui.QDialog(self)
-        self.settingsWindow.setFixedSize(250, 150)
+        self.settingsWindow.setFixedSize(300, 150)
         self.settingsWindow.setWindowTitle("Settings")
 
         urlLabel = QtGui.QLabel("Url")
@@ -174,9 +175,9 @@ class Cyberoam(QtGui.QWidget):
         self.askOnExitField = QtGui.QCheckBox()
         self.autoLoginField = QtGui.QCheckBox()
 
-        okButton = QtGui.QPushButton("OK")
+        okButton = QtGui.QPushButton("&OK")
         okButton.clicked.connect(self.handleSaveSettings)
-        cancelButton = QtGui.QPushButton("Cancel")
+        cancelButton = QtGui.QPushButton("&Cancel")
         cancelButton.clicked.connect(self.settingsWindow.close)
 
         layout = QtGui.QGridLayout()
@@ -251,8 +252,8 @@ class Cyberoam(QtGui.QWidget):
         self.passwordField.setEnabled(False)
         self.rememberField.setEnabled(False)
         self.actionButton.setText(self.actionMessages[self.loggedIn])
-        self.tray.setIcon(QtGui.QIcon("cyberoam-loggedin.png"))
-        self.setWindowIcon(QtGui.QIcon("cyberoam-loggedin.png"))
+        self.tray.setIcon(QtGui.QIcon("./cyberoam-loggedin.png"))
+        self.setWindowIcon(QtGui.QIcon("./cyberoam-loggedin.png"))
         self.passwordField.setText("abcdefghijklmnopqrstuvwxyz")
 
         self.timer = QtCore.QTimer(self)
@@ -289,8 +290,8 @@ class Cyberoam(QtGui.QWidget):
         self.userField.setEnabled(True)
         self.passwordField.setEnabled(True)
         self.rememberField.setEnabled(True)
-        self.tray.setIcon(QtGui.QIcon("cyberoam.png"))
-        self.setWindowIcon(QtGui.QIcon("cyberoam.png"))
+        self.tray.setIcon(QtGui.QIcon("./cyberoam.png"))
+        self.setWindowIcon(QtGui.QIcon("./cyberoam.png"))
 
         if self.loggedIn == 1:
 
