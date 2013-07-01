@@ -18,7 +18,10 @@ The client requires the following software to be installed
 * Python 2.7 (http://www.python.org/getit)
 * PyQt4 (http://www.riverbankcomputing.co.uk/software/pyqt/download/)
 
-Ubuntu users can install it by running `# apt-get install python python-qt4`
+Installation from standard repositories  
+Arch Linux : `# pacman -S python2 python2-pyqt4`  
+Debian/Ubuntu : `# apt-get install python python-qt4`  
+Redhat/Fedora : `# yum install python pyqt4`  
 
 You can also find the source tarballs in the downloads section.
 
