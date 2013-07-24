@@ -1,8 +1,9 @@
 #!/usr/bin/python2
+# Source file containing all the app fuctionality
 # Author: Harsha Satya (https://bitbucket.org/robertsatya)
 # Cyberoam Client GUI for Linux Distros.
-# The Application uses urllib to extract and use login information and PyQt4 as the GUI
-# The Client uses data extraction method mentioned in Linc (Linc Is Not Cyberoam) Open Source Project
+# The Client uses urllib to extract and use login info and PyQt4 as the GUI
+# The Client uses extraction method mentioned in Linc (Linc Is Not Cyberoam)
 # Credit to Siddhartha Sahu for the valuable inputs
 # Documentation to be uploaded soon
 # License:  This  program  is  free  software; you can redistribute it and/or
