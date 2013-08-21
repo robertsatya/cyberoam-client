@@ -28,8 +28,7 @@ You can also find the source tarballs in the downloads section.
 For installation a Makefile is included with the sourcecode.
 Extract the source code onto the computer and enter these commands  
 `cd cyberoam-client`  
-`make all`  
-`sudo make install`   
+`make`  
 
 
 Once the above commands are executed successfully you'll find the Cyberoam Client App in your Applications Menu.
@@ -39,7 +38,6 @@ Uninstallation
 Uninstallation is similar as well  
 `cd cyberoam-client`  
 `make clean`  
-`sudo make uninstall` 
 
 Limitations
 -----------
@@ -65,4 +63,3 @@ License
     with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Thanks to inputs from siddharthasahu and the Authors of Linc (Linc Is Not Cyberoam)
-
