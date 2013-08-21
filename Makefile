@@ -7,7 +7,7 @@
 # Public License for more details.
 
 all: src/cyberoam.py src/Makefile
-	cd src; make install > /dev/null
+	cd src; make -s install
 
 clean:
-	cd src; make uninstall > /dev/null
+	cd src; make -s uninstall

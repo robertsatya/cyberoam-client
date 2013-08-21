@@ -15,7 +15,7 @@
 install:
 	chmod +x ../bin/cyberoam
 	chmod +x ../src/cyberoam-client.desktop
-	mkdir ~/.local/share/cyberoam
+	mkdir -p ~/.local/share/cyberoam
 	cp ../src/cyberoam.py ~/.local/share/cyberoam/
 	cp ../res/* ~/.local/share/cyberoam/
 	sudo cp ../bin/cyberoam /usr/bin/
