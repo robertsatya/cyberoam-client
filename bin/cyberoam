@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python2 ~/.local/share/cyberoam/cyberoam.py &

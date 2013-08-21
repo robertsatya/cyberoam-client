@@ -1,34 +1,13 @@
-# Makefile for Cyberoam Client GUI for Linux
-#
-# To INSTALL the application simple make the project using the following commands:
-#
-# 		make all
-#		sudo make install
-#
-# This will add a Desktop entry to /usr/share/appliactions/ 
-# After successful installation you'll be able to access the Client from your Applications menu
-#
-# To UNINSTALL the Application enter the following
-#
-#		make clean
-#		sudo make uninstall
-#
+# License:  This  program  is  free  software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as published by
+# the  Free Software Foundation; either version 3 of the License, or (at your
+# option)  any later version. This program is distributed in the hope that it
+# will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+# of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+# Public License for more details.
 
-all: 
-	chmod +x ./bin/cyberoam
-	chmod +x ./src/cyberoam-client.desktop
-	mkdir ~/.local/share/cyberoam
-	cp ./src/cyberoam.py ~/.local/share/cyberoam/
-	cp ./res/* ~/.local/share/cyberoam/
-	cp ./bin/cyberoam ~/.local/share/cyberoam/
-	cp ./src/cyberoam-client.desktop /tmp/
-	sed -e 's#~#'$$HOME'#' -i /tmp/cyberoam-client.desktop
-	
-install:
-	cp /tmp/cyberoam-client.desktop /usr/share/applications/
-	
+all: src/cyberoam.py src/Makefile
+	cd src; make install > /dev/null
+
 clean:
-	rm -rf ~/.local/share/cyberoam
-
-uninstall:
-	rm /usr/share/applications/cyberoam-client.desktop
+	cd src; make uninstall > /dev/null
