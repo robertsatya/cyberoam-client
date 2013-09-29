@@ -21,6 +21,7 @@ import urllib2, urllib
 import sys
 import time
 import base64
+import fcntl
 
 
 class Cyberoam(QtGui.QWidget):
@@ -57,7 +58,7 @@ class Cyberoam(QtGui.QWidget):
 			self.password = ""
 
 	def createwindow(self):
-		self.setFixedSize(320, 250)
+		self.setFixedSize(320, 300)
 		self.setWindowTitle("Cyberoam Client")
 		self.setWindowIcon(QtGui.QIcon("./cyberoam.png"))
 
@@ -110,6 +111,12 @@ class Cyberoam(QtGui.QWidget):
 		self.actionButton.clicked.connect(self.handleActionButton)
 		self.settingsButton.clicked.connect(self.showSettingsWindow)
 		self.exitButton.clicked.connect(self.exitApp)
+		
+		self.trytimer = QtCore.QTimer(self)
+		self.trytimer.timeout.connect(self.login)
+		self.timer = QtCore.QTimer(self)
+		self.timer.timeout.connect(self.relogin)
+		
 		self.passwordField.returnPressed.connect(self.handleActionButton)
 
 	def initializeSystemTray(self):
@@ -233,6 +240,10 @@ class Cyberoam(QtGui.QWidget):
 		self.statusLabel.append(timestamp + message)
 
 	def login(self):
+
+		self.trytimer.stop()
+		self.timer.stop()
+
 		cyberoamAddress = self.userSettings['url']
 		data = {"mode":"191","username":self.user,"password":self.password,"a":(str)((int)(time.time() * 1000))}
 		try:
@@ -240,6 +251,7 @@ class Cyberoam(QtGui.QWidget):
 			myfile = urllib2.urlopen(cyberoamAddress + "/login.xml", urllib.urlencode(data) , timeout=3)
 		except IOError:
 			self.updateStatus("Error: Could not connect to server")
+			self.trytimer.start(1000)
 			return
 		data = myfile.read()
 		myfile.close()
@@ -263,10 +275,7 @@ class Cyberoam(QtGui.QWidget):
 		self.tray.setIcon(QtGui.QIcon("./cyberoam-loggedin.png"))
 		self.setWindowIcon(QtGui.QIcon("./cyberoam-loggedin.png"))
 		self.passwordField.setText("abcdefghijklmnopqrstuvwxyz")
-
-		self.timer = QtCore.QTimer(self)
 		self.timer.start(180000)
-		self.timer.timeout.connect(self.relogin)
 
 	def relogin(self):
 		cyberoamAddress = self.userSettings['url']
@@ -277,6 +286,7 @@ class Cyberoam(QtGui.QWidget):
 		except IOError:
 			self.updateStatus("Error: Could not connect to server")
 			self.logout()
+			self.trytimer.start(1000)
 			return
 		data = myfile.read()
 		myfile.close()
@@ -291,6 +301,9 @@ class Cyberoam(QtGui.QWidget):
 			return
 
 	def logout(self):
+		self.trytimer.stop()
+		self.timer.stop()
+		
 		if self.userSettings['lastpassword'] != 'null':
 			self.passwordField.setText(self.password)
 		else:
